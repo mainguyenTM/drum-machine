@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { switchPower, changeVolume, updateDisplay, switchBank } from '../actions/actions';
 
 class DrumPad extends Component{
     constructor(props){
@@ -8,7 +7,7 @@ class DrumPad extends Component{
       this.playSound = this.playSound.bind(this);
       this.updateDisplay = this.updateDisplay.bind(this);
       this.handleKeyPress = this.handleKeyPress.bind(this);
-    }
+    } 
     componentDidMount() {
       document.addEventListener('keydown', this.handleKeyPress);
     }
@@ -64,18 +63,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      switchPower: (currentState) => {
-        dispatch(switchPower(currentState));
-      },
-      changeVolume: (newVolume) => {
-        dispatch(changeVolume(newVolume));
-      },
-      updateDisplay: (newDisplay) => {
+     /*  updateDisplay: (newDisplay) => {
         dispatch(updateDisplay(newDisplay));
-      },
-      switchBank: (currentBank) => {
-        dispatch(switchBank(currentBank));   
-      }
+      } */
     }
 };
 

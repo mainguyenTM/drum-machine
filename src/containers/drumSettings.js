@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PadBank from './PadBank';
+import PadBank from '../components/PadBank';
 import { switchPower, changeVolume, updateDisplay, switchBank } from '../actions/actions';
 
 class App extends Component{
     constructor(props){
       super(props);
-      this.handlePower = this.handlePower.bind(this);
+      //this.handlePower = this.handlePower.bind(this);
       this.handleVolume = this.handleVolume.bind(this);
       this.handleBank = this.handleBank.bind(this);
     }
-    handlePower(e){
+    handlePower = (e) => {
       this.props.switchPower(this.props.power);
     }
     handleVolume(e){

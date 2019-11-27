@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import DrumPad from './DrumPad';
+import DrumPad from '../containers/DrumPad';
 import { bankOne, bankTwo } from '../mock/bank';
 
 export default class PadBank extends Component{
-    constructor(props){
+    /* constructor(props){
       super(props);
-    }
+    } */
     render(){
       let padbank;
       this.props.power ?
