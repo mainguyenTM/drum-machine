@@ -2,32 +2,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class DrumPad extends Component{
-    constructor(props){
-      super(props);
-      this.playSound = this.playSound.bind(this);
-      this.updateDisplay = this.updateDisplay.bind(this);
-      this.handleKeyPress = this.handleKeyPress.bind(this);
-    } 
     componentDidMount() {
       document.addEventListener('keydown', this.handleKeyPress);
     }
     componentWillUnmount() {
       document.removeEventListener('keydown', this.handleKeyPress);
     }
-    playSound(e){
+    playSound = (e) => {
       let sound = document.getElementById(this.props.keyTrigger);
       sound.currentTime = 0;
       if(this.props.power){
         sound.play();
       }else{ return; }
     }
-    updateDisplay(e){
+    updateDisplay = (e) => {
       if(this.props.power){
         let display = document.getElementById('display');
-        display.innerHTML=this.props.id;
+        display.innerHTML = this.props.id;
       }
     }
-    handleKeyPress(e){
+    handleKeyPress = (e) => {
       if(e.keyCode === this.props.keyCode){
         this.playSound(e);
         this.updateDisplay(e);

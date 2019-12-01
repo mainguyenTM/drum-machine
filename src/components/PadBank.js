@@ -3,9 +3,6 @@ import DrumPad from '../containers/DrumPad';
 import { bankOne, bankTwo } from '../mock/bank';
 
 export default class PadBank extends Component{
-    /* constructor(props){
-      super(props);
-    } */
     render(){
       let padbank;
       this.props.power ?
@@ -25,6 +22,7 @@ export default class PadBank extends Component{
               <DrumPad 
                 url={i.url}
                 id={i.id}
+                key={i.id}
                 keyTrigger={i.keyTrigger}
                 keyCode={i.keyCode}
                 style={Object.assign({},this.props.bankTwoStyle,{color: 'rgb(0,200,255)'})}/>
